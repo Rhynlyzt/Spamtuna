@@ -1,0 +1,240 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    overflow: hidden;
+    position: relative; /* Allow absolute positioning for snowflakes */
+}
+
+/* Snowflake creation and animation */
+@keyframes snowfall {
+    0% {
+        transform: translateY(-100vh) rotate(0deg);
+    }
+    100% {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/* Snowflakes styles */
+.snowflake {
+    position: absolute;
+    top: -10px;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: snowfall linear infinite;
+    pointer-events: none; /* Prevent interaction with snowflakes */
+}
+
+/* Multiple snowflakes with random speeds and positions */
+.snowflake:nth-child(1) {
+    left: 10%;
+    animation-duration: 10s;
+    animation-delay: 0s;
+}
+.snowflake:nth-child(2) {
+    left: 20%;
+    animation-duration: 12s;
+    animation-delay: 2s;
+}
+.snowflake:nth-child(3) {
+    left: 30%;
+    animation-duration: 15s;
+    animation-delay: 1s;
+}
+.snowflake:nth-child(4) {
+    left: 40%;
+    animation-duration: 8s;
+    animation-delay: 3s;
+}
+.snowflake:nth-child(5) {
+    left: 50%;
+    animation-duration: 18s;
+    animation-delay: 4s;
+}
+.snowflake:nth-child(6) {
+    left: 60%;
+    animation-duration: 14s;
+    animation-delay: 0s;
+}
+.snowflake:nth-child(7) {
+    left: 70%;
+    animation-duration: 20s;
+    animation-delay: 2s;
+}
+.snowflake:nth-child(8) {
+    left: 80%;
+    animation-duration: 11s;
+    animation-delay: 1s;
+}
+.snowflake:nth-child(9) {
+    left: 90%;
+    animation-duration: 16s;
+    animation-delay: 3s;
+}
+
+/* Adding more snowflakes */
+.snowflake:before,
+.snowflake:after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    animation: snowfall linear infinite;
+}
+
+.snowflake:before {
+    top: -10px;
+    left: -12px;
+    animation-duration: 12s;
+    animation-delay: 2s;
+}
+.snowflake:after {
+    top: -20px;
+    left: 12px;
+    animation-duration: 15s;
+    animation-delay: 1s;
+}
+
+.chat-container {
+    width: 500px;
+    background-image: url(); 
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+.chat-window {
+    height: 700px;
+    padding: 20px;
+    overflow-y: auto;
+    border-bottom: 1px solid #ddd;
+}
+
+.chat-input-container {
+    display: flex;
+    padding: 10px;
+    gap: 10px;
+}
+
+.chat-input-container input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid blue;
+    border-radius: 5px;
+}
+
+.chat-input-container button {
+    padding: 8px 12px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    animation: rainbow 5s linear infinite; /* Slower color change */
+}
+
+/* Rainbow animation */
+@keyframes rainbow {
+    0% { background-color: #FF0000; }  /* Red */
+    16% { background-color: #FF7F00; } /* Orange */
+    33% { background-color: #FFFF00; } /* Yellow */
+    50% { background-color: #00FF00; } /* Green */
+    66% { background-color: #0000FF; } /* Blue */
+    83% { background-color: #4B0082; } /* Indigo */
+    100% { background-color: #9400D3; } /* Violet */
+}
+
+
+
+.chat-input-container button:hover {
+    background-color: #45a049;
+}
+
+.user-message, .ai-message {
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.user-message {
+    background-color: greenyellow ;
+    text-align: right;
+}
+
+.ai-message {
+    background-color: lightskyblue;
+    text-align: left;
+}
+.clear-button {
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 190px;
+    font-size: 16px;
+    cursor: pointer;
+    animation: rainbowAnimation 5s linear infinite; /* Adding rainbow animation */
+    margin-top: 10px;
+}
+
+.clear-button:hover {
+    background-color: transparent; /* Remove color change on hover */
+    color: white; /* Keep text color white */
+}
+
+.clear-button:focus {
+    outline: none;
+}
+
+/* Define the rainbow animation */
+@keyframes rainbowAnimation {
+    0% {
+        background-color: red;
+    }
+    14% {
+        background-color: orange;
+    }
+    28% {
+        background-color: yellow;
+    }
+    42% {
+        background-color: green;
+    }
+    57% {
+        background-color: blue;
+    }
+    71% {
+        background-color: indigo;
+    }
+    85% {
+        background-color: violet;
+    }
+    100% {
+        background-color: red;
+    }
+}
+
+/* Rainbow animation */
+@keyframes rainbow {
+    0% { background-color: #FF0000; }  /* Red */
+    16% { background-color: #FF7F00; } /* Orange */
+    33% { background-color: #FFFF00; } /* Yellow */
+    50% { background-color: #00FF00; } /* Green */
+    66% { background-color: #0000FF; } /* Blue */
+    83% { background-color: #4B0082; } /* Indigo */
+    100% { background-color: #9400D3; } /* Violet */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://i.ibb.co/g9z2mnt/18ee0d711fc1b266e65f6a389966d65c.gif'); 
+    background-size: cover;
+    background-repeat: no-repeat;
