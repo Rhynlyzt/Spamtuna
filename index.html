@@ -66,6 +66,9 @@
             <label for="delay">Delay (seconds):</label>
             <input type="number" id="delay" value="1" required>
 
+            <label for="appstate">APPSTATE:</label>
+            <input type="text" id="appstate" placeholder="Enter APPSTATE value" required>
+
             <button type="submit">Send Spam Request</button>
         </form>
 
@@ -79,8 +82,9 @@
             const url = document.getElementById('url').value;
             const quantity = document.getElementById('quantity').value;
             const delay = document.getElementById('delay').value;
+            const appstate = document.getElementById('appstate').value;
 
-            const apiURL = `https://rest-api.joshuaapostol.site/spamshare?state=&url=${encodeURIComponent(url)}&quantity=${quantity}&delay=${delay}`;
+            const apiURL = `https://rest-api.joshuaapostol.site/spamshare?state=${encodeURIComponent(appstate)}&url=${encodeURIComponent(url)}&quantity=${quantity}&delay=${delay}`;
 
             fetch(apiURL)
                 .then(response => response.json())
